@@ -24,7 +24,7 @@ $ cd ../..
 $ npm start
 ```
 
-You will now see the following error from React indication that multiple copies of React have been loaded.
+You will now see the following error in the browser because multiple copies of React have been loaded.
 
 ```
 Element ref was specified as a string (container) but no owner was set.
@@ -39,5 +39,5 @@ See https://fb.me/react-refs-must-have-owner for more information.
 
 Notes
 -----
-- I specifically chose the `react-vis` library for this application because it uses a ref to the DOM. The multiple copies issue shows up only when some dependency is using a ref.
-- Based on this issue, it is not possible to run a Storybook, Jest or any other tool that needs React as a devDependency!
+- I have intentionally chosen the `react-vis` library to demonstrate this issue because it uses a DOM ref. The issue only shows up when some dependency is using a ref.
+- Because of this issue, it is not possible to run a Storybook, Jest or any other tool that needs React as a `devDependency`!

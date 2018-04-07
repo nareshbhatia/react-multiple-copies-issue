@@ -1,0 +1,43 @@
+{
+  "name": "react-multiple-copies-issue",
+  "description": "Example demonstrationg the issue with loading multiple copies of React",
+  "version": "1.0.0",
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nareshbhatia/react-multiple-copies-issue.git"
+  },
+  "scripts": {
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap",
+    "del-dist": "lerna exec --parallel -- del-cli dist",
+    "prebuild": "npm run del-dist",
+    "build": "lerna exec --parallel -- babel src -d dist --ignore test.js,story.js",
+    "start": "cd packages/myapp && npm start",
+    "lint": "eslint 'packages/*/src/**/*.js'",
+    "format": "prettier --print-width 80 --tab-width 4 --single-quote --write 'packages/*/src/**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "lerna": "^2.9.0",
+    "lint-staged": "^7.0.2",
+    "prettier": "^1.11.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 80 --tab-width 4 --single-quote --write",
+      "git add"
+    ]
+  }
+}

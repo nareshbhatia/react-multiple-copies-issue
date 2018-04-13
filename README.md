@@ -29,9 +29,11 @@ Fix the issue by removing React from mylib
 ```bash
 $ cd packages/mylib
 $ npm uninstall react react-dom
+$ cd ../..
+$ npm start
 ```
 
-Now run the entire build again. The app should work this time! You should see a progress bar in the browser. However, Storybook can't run any more since it needs React in `mylib` :-(.
+Now the app should run just fine - you should see a progress bar in the browser. However, removing React from `mylib` means that Storybook can't run there any more :-(.
 
 Notes
 -----
